@@ -14,12 +14,14 @@
 
 / {
 	behaviors {
+		// Like gresc, but only for RIGHT shift and super. Makes Ctrl+Shift+Esc possible.
 		rgresc: right_grave_escape {
 			compatible = "zmk,behavior-mod-morph";
 			label = "RIGHT_GRAVE_ESCAPE";
 			#binding-cells = <0>;
 			bindings = <&kp ESC>, <&kp GRAVE>;
 			mods = <(MOD_RGUI|MOD_RSFT)>;
+			keep-mods = <(MOD_RSFT)>;
 		};
 	};
 	keymap {
